@@ -65,12 +65,25 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 50px 50px 50px;
+  /* padding: 50px 50px 50px 50px; */
+}
+
+section.8-ball {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 /* Title ======================  */
 div.title {
   max-width: 75vw;
+  margin-top: 50px;
   margin-bottom: 124px;
   position: relative;
 }
