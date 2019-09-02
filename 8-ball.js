@@ -3,7 +3,7 @@ const renderer = new THREE.WebGLRenderer({
   alpha: true
 })
 
-renderer.setSize(window.innerWidth, window.innerHeight)
+renderer.setSize(window.innerWidth / 2, window.innerHeight)
 renderer.setPixelRatio(window.devicePixelRatio)
 renderer.setClearColor(0x000000, 0)
 
@@ -19,7 +19,7 @@ const pointLight = new THREE.PointLight(0xffffff, 0.05  , 0)
 pointLight.position.set(1000, 1000, -2000)
 scene.add(pointLight)
 
-const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 10000 )
+const camera = new THREE.PerspectiveCamera(50, window.innerWidth / 2 / window.innerHeight, 0.1, 10000 )
 camera.position.z = -2500
 
 
@@ -77,17 +77,18 @@ const animate = function () {
 animate()
 
 window.addEventListener("resize", function() {
-  camera.aspect = window.innerWidth/window.innerHeight
+  camera.aspect = window.innerWidth / 2 /window.innerHeight
   camera.updateProjectionMatrix()
 
-  renderer.setSize(window.innerWidth, window.innerHeight)
+  renderer.setSize(window.innerWidth / 2, window.innerHeight)
 })
 
 document.addEventListener("mousemove", function (event) {
     aimX = ((window.innerWidth / 2) - event.pageX) * 2
   	aimY = ((window.innerHeight / 2) - event.pageY) * 2
-    // aimX = aimX + ((event.pageX - startX) * 8)
-    // aimY = aimY + ((event.pageY - startY) * 8)
-    // startX = event.pageX
-    // startY = event.pageY
+})
+
+document.addEventListener("mousemove", function (event) {
+    aimX = ((window.innerWidth / 4) - event.pageX) * 2
+  	aimY = ((window.innerHeight / 2) - event.pageY) * 2
 })

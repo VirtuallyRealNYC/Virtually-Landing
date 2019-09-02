@@ -25,40 +25,53 @@ a {
 }
 
 p {
-  font-family: 'Roboto';
-  font-weight: 500;
+  font-family: 'Arial Narrow';
+  font-weight: 700;
   font-size: 30px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 h1 {
   font-family: 'Druk';
-  font-size: 75px;
+  /* font-size: 75px; */
+  font-size: calc(24px + (75 - 24) * ((100vw - 300px) / (1600 - 300)));
   text-transform: uppercase;
 }
 
 h2 {
   font-family: 'Chapter';
-  font-size: 60px;
+  /* font-size: 60px; */
+  font-size: calc(35px + (60 - 35) * ((100vw - 300px) / (1600 - 300)));
   text-transform: uppercase;
 }
 
 h3 {
   font-family: 'Druk';
-  font-size: 50px;
+  /* font-size: 50px; */
+  font-size: calc(24px + (50 - 24) * ((100vw - 300px) / (1600 - 300)));
 }
 
 h4 {
-  font-family: 'Chapter';
-  font-size: 50px;
+  font-family: 'Arial Narrow';
+  /* font-size: 60px; */
+  font-size: calc(35px + (60 - 35) * ((100vw - 300px) / (1600 - 300)));
   text-transform: capitalize;
-  color: #fff;
 }
 
 h5 {
-  font-family: 'Roboto';
+  font-family: 'Arial Narrow';
   font-weight: 300;
+  /* font-size: 18px; */
+  font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
   text-transform: uppercase;
+}
+
+h6 {
+  font-family: 'Roboto';
+  font-weight: 500;
+  /* font-size: 30px; */
+  font-size: calc(20px + (30 - 20) * ((100vw - 300px) / (1600 - 300)));
+  letter-spacing: 2px;
 }
 
 main {
@@ -69,125 +82,307 @@ main {
 }
 
 section.8-ball {
-  position: fixed;
   top: 0;
   left: 0;
+  width: 50%;
 }
 
 canvas {
   position: fixed;
+  height: 100%;
+  width: 100%;
   top: 0;
   left: 0;
 }
 
 /* Title ======================  */
-div.title {
-  max-width: 75vw;
-  margin-top: 50px;
-  margin-bottom: 124px;
-  position: relative;
+section.title {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 15vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+
+  padding: 0px 0px 0px 30px;
+}
+
+div.title-heading {
+
+}
+
+section.title span {
+  display: none;
+}
+
+div.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateX(75px);
 }
 
 div.contact img {
   width: 200px;
-  position: absolute;
-  right: -145px;
-  top: 55px;
 }
 
 div.contact a {
-  position: absolute;
-  right: -100px;
-  top: 80px;
-  z-index: 100;
+  transform: translateX(-158px) translateY(-2px);
   font-family: 'Chapter';
   font-size: 30px;
 }
 
-/* Description ===================  */
+/* Description & Copyright ===================  */
 
-div.description {
-  width: 60vw;
-  text-align: center;
-  margin-bottom: 124px;
+section.description {
+  width: 100vw;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+
+  padding: 0px 30px 0 30px;
+
+  border-bottom: 2px solid black;
 }
 
-/* div.description {
-  color: #fff;
-  text-align: center;
-  margin-bottom: 124px;
-  background-color: #000;
-  width: 100vw;
+div.description-bio {
+ width: 70%;
+ padding: 0px 15px 0 0px;
+}
+
+section.description span {
+  display: none;
+}
+
+div.copyright {
+  width: 30%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
 }
 
-div.description h2 {
-  width: 60vw;
-} */
+div.copyright img {
+  transform: rotate(20deg);
+  width: 20vw;
+  height: auto;
+}
 
-/* Location =======================  */
+
+/* Tasks & Location ===========================  */
+
+section.tasks {
+  width: 100vw;
+  height: 35vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+
+  padding: 0px 30px 0 30px;
+
+  border-bottom: 2px solid black;
+}
+
+div.task-buttons {
+  width: 60%;
+  padding: 0px 15px 0 0px;
+}
+
+div.task-buttons h5 {
+  margin-bottom: 24px;
+}
+
+section span {
+  background-color: #000;
+  width: 2px;
+  height: 100%;
+}
 
 div.location {
+  width: 40%;
   text-align: center;
-  margin-bottom: 124px;
+
+  padding: 0px 0px 0px 15px;
 }
 
 div.location h3 {
   margin-bottom: 44px;
 }
 
-/* Tasks ===========================  */
 
-div.tasks {
+
+/* Clock =========================  */
+
+section.clock {
   display: flex;
-  flex-direction: column;
+  width: 100vw;
+  height: 10vh;
+  padding: 0px 30px 0px 30px;
+
   align-items: center;
-  margin-bottom: 124px;
+  justify-content: space-between;
+
+  font-family: 'Roboto';
+  font-weight: 500;
+  /* font-size: 30px; */
+  font-size: calc(20px + (30 - 20) * ((100vw - 300px) / (1600 - 300)));
+
+  letter-spacing: 2px;
+
+  border-bottom: 2px solid black;
 }
 
-div.tasks h5 {
-  margin-bottom: 24px;
+/* Media Queries ====================  */
+@media only screen and (max-width: 1024px) {
+
+  /* Header ==================  */
+  section.title {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0px 0px 0px 0px;
+  }
+
+  div.title-heading {
+    padding: 1.5em 15px 1.5em 15px;
+  }
+
+  section.title span {
+    display: block;
+    background-color: #000;
+    width: 100%;
+    height: 2px;
+  }
+
+  div.contact {
+    padding: 1.5em 15px 1.5em 15px;
+    transform: translateX(55px);
+  }
+
+  div.contact img {
+    width: 150px;
+  }
+
+  div.contact a {
+    transform: translateX(-125px) translateY(-2px);
+    font-family: 'Chapter';
+    font-size: 25px;
+  }
+
+  /* Description & Copyright ===================  */
+
+  section.description {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+    padding: 0px 0px 0 0px;
+
+    border-bottom: 2px solid black;
+  }
+
+  div.description-bio {
+   width: 100%;
+   padding: 1.5em 15px 1.5em 15px;
+  }
+
+  section.description span {
+    display: block;
+    background-color: #000;
+    width: 100%;
+    height: 2px;
+  }
+
+  div.copyright {
+    width: 30%;
+    padding: 1.5em 0px 1.5em 0px;
+  }
+
+  div.copyright img {
+    transform: rotate(20deg);
+    width: 40vw;
+    height: auto;
+  }
+
+/* Tasks and Location ========================= */
+
+section.tasks {
+  width: 100%;
+  height: auto;
+  padding: 0px 0px 0 0px;
+  flex-direction: column;
+  border-bottom: 2px solid black;
 }
 
 div.task-buttons {
-  width: 75vw;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  width: 100%;
+  padding: 1.5em 15px 1.5em 15px;
 }
 
-div.button {
-  background: #000;
-  margin: 0px 5px 5px 5px;
-  border-radius: 12px;
-  text-align: center;
-  padding: .5em 1em .5em 1em;
-  position: relative;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
+div.task-buttons h5 {
+  margin-bottom: 15px;
 }
 
-div.button h4 {
-   position: relative;
-   color: #fff;
-   transform: translateY(-10%);
+section.tasks span {
+  background-color: #000;
+  width: 100%;
+  height: 2px;
+}
+
+div.location {
+  width: 100%;
+  text-align: left;
+  padding: 1.5em 15px 1.5em 15px;
+}
+
+div.location h3 {
+  margin-bottom: 15px;
 }
 
 /* Clock =========================  */
 
-div.clock {
+section.clock {
   display: flex;
-  width: 40vw;
-  justify-content: space-between;
-  padding-bottom: 124px;
+  flex-direction: column;
+  width: 100vw;
+  height: auto;
+  padding: 0px 0px 0px 0px;
+
+  align-items: center;
+  justify-content: center;
+
   font-family: 'Roboto';
   font-weight: 500;
-  font-size: 30px;
-  letter-spacing: 1px;
+  /* font-size: 30px; */
+  font-size: calc(20px + (30 - 20) * ((100vw - 300px) / (1600 - 300)));
+
+  letter-spacing: 2px;
+
+  border-bottom: 2px solid black;
+}
+
+section.clock span {
+  background-color: #000;
+  width: 100%;
+  height: 2px;
+}
+
+section.clock div {
+  padding: .5em 15px .5em 15px;
+}
+
+
 }
