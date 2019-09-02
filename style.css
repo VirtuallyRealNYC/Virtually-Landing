@@ -84,7 +84,7 @@ main {
 section.8-ball {
   top: 0;
   left: 0;
-  width: 50%;
+  width: 100%;
 }
 
 canvas {
@@ -93,6 +93,7 @@ canvas {
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 1
 }
 
 /* Title ======================  */
@@ -126,6 +127,7 @@ div.contact {
   justify-content: center;
 
   transform: translateX(75px);
+  z-index: 2;
 }
 
 div.contact img {
@@ -173,6 +175,7 @@ div.copyright img {
   transform: rotate(20deg);
   width: 20vw;
   height: auto;
+  z-index: 0;
 }
 
 
