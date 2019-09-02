@@ -88,7 +88,7 @@ document.addEventListener("mousemove", function (event) {
   	aimY = ((window.innerHeight / 2) - event.pageY) * 2
 })
 
-document.addEventListener("mousemove", function (event) {
+document.addEventListener("touchmove", function (event) {
     aimX = ((window.innerWidth / 2) - event.pageX) * 2
   	aimY = ((window.innerHeight / 2) - event.pageY) * 2
 })
