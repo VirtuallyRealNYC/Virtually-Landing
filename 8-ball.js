@@ -55,6 +55,7 @@ if (mq1.matches) {
     let currentY = 0
     let aimX = 0
     let aimY = 0
+    let isMouseDown = false
 
     // Animation loop
 
@@ -79,6 +80,16 @@ if (mq1.matches) {
 
     animate()
 
+    document.addEventListener("touchstart", function () {
+    isMouseDown = true
+    startX = event.pageX
+    startY = event.pageY
+  })
+
+  document.addEventListener("touchend", function () {
+    isMouseDown = false
+  })
+
     window.addEventListener("resize", function() {
       camera.aspect = window.innerWidth /window.innerHeight
       camera.updateProjectionMatrix()
@@ -91,10 +102,29 @@ if (mq1.matches) {
       	aimY = ((window.innerHeight / 2) - event.pageY) * 2
     })
 
-    // document.addEventListener("touchmove", function (event) {
-    //     aimX = ((window.innerWidth / 2) - event.pageX) * 2
-    //   	aimY = ((window.innerHeight / 2) - event.pageY) * 2
-    // })
+    document.addEventListener("touchmove", function (event) {
+        aimX = ((window.innerWidth / 2) - event.pageX) * 2
+      	// aimY = ((window.innerHeight / 2) - event.pageY) * 2
+    })
+
+    document.addEventListener("touchmove", function (event) {
+      if(isMouseDown) {
+        let currentRotation = new THREE.Matrix4();
+                currentRotation.makeRotationFromEuler(ball.rotation);
+
+                let newEuler = new THREE.Euler((event.pageY - startY) / 100, (event.pageX - startX) / 100, 0);
+                let newRotation = new THREE.Matrix4();
+                newRotation.makeRotationFromEuler(newEuler);
+
+                let finalRotation = new THREE.Matrix4();
+                finalRotation.multiplyMatrices(newRotation, currentRotation);
+
+                ball.rotation.setFromRotationMatrix(finalRotation);
+
+                startX = event.pageX;
+                startY = event.pageY;
+      }
+    })
 }
 else {
     // window width is greater than 1024px
