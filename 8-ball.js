@@ -101,12 +101,7 @@ if (mq1.matches) {
         aimX = ((window.innerWidth / 2) - event.pageX) * 2
       	aimY = ((window.innerHeight / 2) - event.pageY) * 2
     })
-
-    document.addEventListener("touchmove", function (event) {
-        aimX = ((window.innerWidth / 2) - event.pageX) * 2
-      	// aimY = ((window.innerHeight / 2) - event.pageY) * 2
-    })
-
+    
     document.addEventListener("touchmove", function (event) {
       if(isMouseDown) {
         let currentRotation = new THREE.Matrix4();
@@ -176,6 +171,26 @@ else {
     }
 
     animate()
+
+    sectionTag.addEventListener('wheel', onMouseWheel, false);
+
+      function onMouseWheel(event) {
+          event.preventDefault();
+
+        let currentRotation = new THREE.Matrix4();
+                currentRotation.makeRotationFromEuler(ball.rotation);
+
+                let newEuler = new THREE.Euler(event.deltaY * 0.007, event.deltaX * 0.007, 0);
+                let newRotation = new THREE.Matrix4();
+                newRotation.makeRotationFromEuler(newEuler);
+
+                let finalRotation = new THREE.Matrix4();
+                finalRotation.multiplyMatrices(newRotation, currentRotation);
+
+                ball.rotation.setFromRotationMatrix(finalRotation);
+
+      }
+
 
     window.addEventListener("resize", function() {
       camera.aspect = window.innerWidth /window.innerHeight

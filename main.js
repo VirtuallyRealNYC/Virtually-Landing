@@ -1,6 +1,9 @@
 const contactTag = document.querySelector("div.contact")
 const contactSVG = document.querySelector(".contactSVG")
 const contactP = document.querySelector("div.contact p")
+var parent = document.getElementById('parent');
+var child = document.getElementById('child');
+child.style.paddingRight = child.offsetWidth - child.clientWidth + "px";
 
 
 
