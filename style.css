@@ -274,8 +274,8 @@ section.clock {
     height: 2px;
   }
 
-  div.contact a{
-    padding: 1.5em 15px 1.5em 15px;
+  div.contact a {
+    padding: .75px 15px .75px 15px;
     transform: translateX(55px);
   }
 

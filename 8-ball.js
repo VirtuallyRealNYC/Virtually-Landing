@@ -91,10 +91,10 @@ if (mq1.matches) {
       	aimY = ((window.innerHeight / 2) - event.pageY) * 2
     })
 
-    document.addEventListener("touchmove", function (event) {
-        aimX = ((window.innerWidth / 2) - event.pageX) * 2
-      	aimY = ((window.innerHeight / 2) - event.pageY) * 2
-    })
+    // document.addEventListener("touchmove", function (event) {
+    //     aimX = ((window.innerWidth / 2) - event.pageX) * 2
+    //   	aimY = ((window.innerHeight / 2) - event.pageY) * 2
+    // })
 }
 else {
     // window width is greater than 1024px
