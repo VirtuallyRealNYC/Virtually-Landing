@@ -19,6 +19,13 @@
        url('fonts/Chapter-Regular.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'Arial Narrow';
+  src: url('fonts/3A0A54_0_0.eot'); /* IE9 Compat Modes */
+  src: url('fonts/3A0A54_0_0.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/3A0A54_0_0.woff') format('woff');
+}
+
 a {
   color: #000;
   text-decoration: none;
@@ -26,7 +33,7 @@ a {
 
 p {
   font-family: 'Arial Narrow', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 30px;
   letter-spacing: 2px;
 }
@@ -34,7 +41,7 @@ p {
 h1 {
   font-family: 'Druk';
   /* font-size: 75px; */
-  font-size: calc(24px + (75 - 24) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(24px + (45 - 24) * ((100vw - 300px) / (1600 - 300)));
   text-transform: uppercase;
 }
 
@@ -43,6 +50,7 @@ h2 {
   /* font-size: 60px; */
   font-size: calc(35px + (60 - 35) * ((100vw - 300px) / (1600 - 300)));
   text-transform: uppercase;
+  line-height: 1.15em;
 }
 
 h3 {
@@ -54,7 +62,9 @@ h3 {
 h4 {
   font-family: 'Arial Narrow', sans-serif;
   /* font-size: 60px; */
-  font-size: calc(35px + (60 - 35) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(35px + (40 - 35) * ((100vw - 300px) / (1600 - 300)));
+  font-weight: 100;
+  line-height: 1.15em;
   text-transform: capitalize;
 }
 
@@ -67,10 +77,10 @@ h5 {
 }
 
 h6 {
-  font-family: 'Roboto';
+  font-family: 'Arial Narrow';
   font-weight: 500;
   /* font-size: 30px; */
-  font-size: calc(20px + (30 - 20) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(20px + (24 - 20) * ((100vw - 300px) / (1600 - 300)))
   letter-spacing: 2px;
 }
 
@@ -203,7 +213,7 @@ section.tasks {
 
 div.task-buttons {
   width: 60%;
-  padding: 0px 15px 0 0px;
+  padding: 0px 200px 0 0px;
 }
 
 div.task-buttons h5 {
@@ -223,8 +233,12 @@ div.location {
   padding: 0px 0px 0px 15px;
 }
 
-div.location h3 {
-  margin-bottom: 44px;
+div.location h5 {
+  margin-bottom: 24px;
+}
+
+div.location h4 {
+  font-size: calc(35px + (35 - 35) * ((100vw - 300px) / (1600 - 300)));
 }
 
 
@@ -240,10 +254,10 @@ section.clock {
   align-items: center;
   justify-content: space-between;
 
-  font-family: 'Roboto';
+  font-family: 'Arial Narrow';
   font-weight: 500;
   /* font-size: 30px; */
-  font-size: calc(20px + (30 - 20) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(20px + (24 - 20) * ((100vw - 300px) / (1600 - 300)));
 
   letter-spacing: 2px;
 
