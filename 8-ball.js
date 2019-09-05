@@ -19,8 +19,6 @@ const pointLight = new THREE.PointLight(0xffffff, 0.05  , 0)
 pointLight.position.set(1000, 1000, -2000)
 scene.add(pointLight)
 
-const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 10000 )
-camera.position.z = -125
 
 // hold the camera positions
 let currentX = 0
@@ -79,11 +77,13 @@ const makeBall = function() {
 
 
 
-// Media Querie ===============================================
+// Media Queries ===============================================
 
 var mq1 = window.matchMedia( "(max-width: 1024px)" );
 if (mq1.matches) {
     // window width is at less than 1024px
+    const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 10000 )
+    camera.position.z = -400
 
     // Animation loop
 
@@ -157,6 +157,9 @@ if (mq1.matches) {
 else {
     // window width is greater than 1024px ===============================================================================================================================================
 
+    const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 10000 )
+    camera.position.z = -125
+    
     // Animation loop
 
     const animate = function () {
