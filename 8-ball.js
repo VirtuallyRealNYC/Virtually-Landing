@@ -160,7 +160,7 @@ else {
     // window width is greater than 1024px ===============================================================================================================================================
 
     const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 10000 )
-    camera.position.z = -125
+    camera.position.z = -155
 
     // Animation loop
 

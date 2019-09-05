@@ -84,25 +84,25 @@ h6 {
   letter-spacing: 2px;
 }
 
-div.cursor {
+/* div.cursor {
   position: absolute;
   width: 300px;
   height: 450px;
   background-image: url(lib/virtually.png);
   background-repeat: no-repeat;
   z-index: 10000;
-}
+} */
 
-a:hover {
+/* a:hover {
   cursor: none !important;
-}
+} */
 
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
   /* padding: 50px 50px 50px 50px; */
-  cursor: none;
+  /* cursor: none; */
 }
 
 section.8-ball {
@@ -280,6 +280,10 @@ section.clock {
 
 /* Media Queries ====================  */
 @media only screen and (max-width: 1024px) {
+
+  /* div.cursor {
+    display: none;
+  } */
 
   /* Header ==================  */
   section.title {
