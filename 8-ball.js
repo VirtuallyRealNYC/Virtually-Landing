@@ -47,6 +47,8 @@ mtlLoader.load("lib/magicEightBall.mtl", function(materials) {
   })
 })
 
+
+
 // Texture Loader =================
 const loader = new THREE.TextureLoader()
 

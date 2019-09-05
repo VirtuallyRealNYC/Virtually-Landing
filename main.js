@@ -13,6 +13,17 @@ if (mq.matches) {
 }
 else {
     // window width is greater than 570px
+    document.addEventListener("mousemove", function(event) {
+      const x = event.pageX
+      const y = event.pageY + 20
+
+      const cursor = document.querySelector("div.cursor")
+
+      cursor.style.left = x + "px"
+      cursor.style.top = y + "px"
+    })
+
+
     contactTag.addEventListener("mouseover", function () {
       contactSVG.style.fill = "#9def27"
       contactSVG.style.stroke = "#9def27"
