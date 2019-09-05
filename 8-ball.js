@@ -123,12 +123,12 @@ if (mq1.matches) {
     isMouseDown = false
   })
 
-    window.addEventListener("resize", function() {
-      camera.aspect = window.innerWidth /window.innerHeight
-      camera.updateProjectionMatrix()
-
-      renderer.setSize(window.innerWidth, window.innerHeight)
-    })
+    // window.addEventListener("resize", function() {
+    //   camera.aspect = window.innerWidth /window.innerHeight
+    //   camera.updateProjectionMatrix()
+    //
+    //   renderer.setSize(window.innerWidth, window.innerHeight)
+    // })
 
     document.addEventListener("mousemove", function (event) {
         aimX = ((window.innerWidth / 2) - event.pageX) * 2
