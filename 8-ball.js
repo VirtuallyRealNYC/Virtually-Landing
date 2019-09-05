@@ -12,50 +12,78 @@ sectionTag.appendChild(renderer.domElement)
 
 const scene = new THREE.Scene()
 
-const ambientLight = new THREE.AmbientLight(0x777777, 10, 0)
+const ambientLight = new THREE.AmbientLight(0x777777, 2.5, 0)
 scene.add(ambientLight)
 
 const pointLight = new THREE.PointLight(0xffffff, 0.05  , 0)
 pointLight.position.set(1000, 1000, -2000)
 scene.add(pointLight)
 
-const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 10000 )
-camera.position.z = -2500
+const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 10000 )
+camera.position.z = -125
+
+// hold the camera positions
+let currentX = 0
+let currentY = 0
+let aimX = 0
+let aimY = 0
+let isMouseDown = false
 
 
-// Loader =================
+// Obj Loader ================================================
+const objLoader = new THREE.OBJLoader()
+const mtlLoader = new THREE.MTLLoader()
+
+
+var axis = new THREE.Vector3( 1, 10, 0 ).normalize();
+
+let ball = null
+
+mtlLoader.load("lib/MagicEightBall.mtl", function(materials) {
+  objLoader.setMaterials(materials)
+  objLoader.load("lib/MagicEightBall.obj", function(obj) {
+    obj.rotateX(5)
+    obj.position.z = 0
+    ball = obj
+    scene.add(obj)
+  })
+})
+
+// Texture Loader =================
 const loader = new THREE.TextureLoader()
+
 // Make the 8-ball =================
+const makeBall = function() {
+  const texture = loader.load("lib/8-ball.png")
+  const geometry = new THREE.SphereGeometry(6, .96, .96)
+  const material = new THREE.MeshPhongMaterial({
+    map: texture,
+    emissive: 0x00000,
+    specular: 0xffffff,
+    shininess: 50
+  })
+
+  const mesh = new THREE.Mesh(geometry, material)
+  scene.add(mesh)
+  return mesh
+}
+
+// const eightball = makeBall()
+
+// Group =============================
+// var group = new THREE.Group();
+// group.add( eightball );
+// group.add( ball );
+//
+// scene.add( group );
+
+
+
+// Media Querie ===============================================
 
 var mq1 = window.matchMedia( "(max-width: 1024px)" );
 if (mq1.matches) {
     // window width is at less than 1024px
-    const makeBall = function() {
-      const texture = loader.load("lib/8-ball.png")
-      const geometry = new THREE.SphereGeometry(240, 38.4, 38.4)
-      const material = new THREE.MeshPhongMaterial({
-        map: texture,
-        emissive: 0x00000,
-        specular: 0xffffff,
-        shininess: 50
-      })
-
-      const mesh = new THREE.Mesh(geometry, material)
-      scene.add(mesh)
-      return mesh
-    }
-
-    const ball = makeBall()
-    ball.position.y = -50
-    ball.rotateX(0.2)
-    ball.rotateZ(0.2)
-
-    // hold the camera positions
-    let currentX = 0
-    let currentY = 0
-    let aimX = 0
-    let aimY = 0
-    let isMouseDown = false
 
     // Animation loop
 
@@ -66,12 +94,17 @@ if (mq1.matches) {
       currentX = currentX + diffX * 0.05
       currentY = currentY + diffY * 0.05
 
-      ball.position.x = currentX
-      ball.position.y = currentY
+      if(ball){
+
+        // ball.rotateY(-0.008)
+        // ball.rotateX(-0.006)
+        // ball.rotateZ(-0.004)
+        ball.rotateOnAxis( axis, Math.PI * 0.005 )
+        ball.position.x = currentX
+        ball.position.y = currentY
+      }
 
       camera.lookAt(scene.position)
-
-      ball.rotateY(0.008)
 
       renderer.render(scene, camera)
 
@@ -101,7 +134,7 @@ if (mq1.matches) {
         aimX = ((window.innerWidth / 2) - event.pageX) * 2
       	aimY = ((window.innerHeight / 2) - event.pageY) * 2
     })
-    
+
     document.addEventListener("touchmove", function (event) {
       if(isMouseDown) {
         let currentRotation = new THREE.Matrix4();
@@ -122,32 +155,7 @@ if (mq1.matches) {
     })
 }
 else {
-    // window width is greater than 1024px
-    const makeBall = function() {
-      const texture = loader.load("lib/8-ball.png")
-      const geometry = new THREE.SphereGeometry(600, 96, 96)
-      const material = new THREE.MeshPhongMaterial({
-        map: texture,
-        emissive: 0x00000,
-        specular: 0xffffff,
-        shininess: 50
-      })
-
-      const mesh = new THREE.Mesh(geometry, material)
-      scene.add(mesh)
-      return mesh
-    }
-
-    const ball = makeBall()
-    ball.position.y = -50
-    ball.rotateX(0.2)
-    ball.rotateZ(0.2)
-
-    // hold the camera positions
-    let currentX = 0
-    let currentY = 0
-    let aimX = 0
-    let aimY = 0
+    // window width is greater than 1024px ===============================================================================================================================================
 
     // Animation loop
 
@@ -158,12 +166,22 @@ else {
       currentX = currentX + diffX * 0.05
       currentY = currentY + diffY * 0.05
 
-      ball.position.x = currentX
-      ball.position.y = currentY
+      if(ball){
+
+        // ball.rotateY(-0.008)
+        // ball.rotateX(-0.006)
+        // ball.rotateZ(-0.004)
+        ball.rotateOnAxis( axis, Math.PI * 0.005 )
+        ball.position.x = currentX
+        ball.position.y = currentY
+      }
+
+      // if(ball){
+      //   group.rotateY(-0.008)
+      // }
+
 
       camera.lookAt(scene.position)
-
-      ball.rotateY(0.008)
 
       renderer.render(scene, camera)
 
@@ -188,8 +206,7 @@ else {
                 finalRotation.multiplyMatrices(newRotation, currentRotation);
 
                 ball.rotation.setFromRotationMatrix(finalRotation);
-
-      }
+              }
 
 
     window.addEventListener("resize", function() {
@@ -200,12 +217,12 @@ else {
     })
 
     document.addEventListener("mousemove", function (event) {
-        aimX = ((window.innerWidth / 2) - event.pageX) * 2
-      	aimY = ((window.innerHeight / 2) - event.pageY) * 2
+        aimX = ((window.innerWidth / 2) - event.pageX) * 0.08
+      	aimY = ((window.innerHeight / 2) - event.pageY) * 0.08
     })
 
     document.addEventListener("touchmove", function (event) {
-        aimX = ((window.innerWidth / 2) - event.pageX) * 2
-      	aimY = ((window.innerHeight / 2) - event.pageY) * 2
+        aimX = ((window.innerWidth / 2) - event.pageX) * 0.08
+      	aimY = ((window.innerHeight / 2) - event.pageY) * 0.08
     })
 }
