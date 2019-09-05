@@ -37,9 +37,9 @@ var axis = new THREE.Vector3( 1, 10, 0 ).normalize();
 
 let ball = null
 
-mtlLoader.load("lib/MagicEightBall.mtl", function(materials) {
+mtlLoader.load("lib/magicEightBall.mtl", function(materials) {
   objLoader.setMaterials(materials)
-  objLoader.load("lib/MagicEightBall.obj", function(obj) {
+  objLoader.load("lib/magicEightBall.obj", function(obj) {
     obj.rotateX(5)
     obj.position.z = 0
     ball = obj
@@ -159,7 +159,7 @@ else {
 
     const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 10000 )
     camera.position.z = -125
-    
+
     // Animation loop
 
     const animate = function () {
