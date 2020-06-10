@@ -3,8 +3,6 @@
   margin: 0;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,500&display=swap');
-
 @font-face {
   font-family: 'Druk';
   src: url('fonts/DrukWide-Bold-Web.eot'); /* IE9 Compat Modes */
@@ -101,8 +99,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding: 50px 50px 50px 50px; */
-  /* cursor: none; */
 }
 
 section.8-ball {
@@ -149,6 +145,7 @@ div.contact {
   z-index: 1000;
 }
 
+
 div.contact a{
   display: flex;
   align-items: center;
@@ -161,6 +158,16 @@ div.contact svg.contactSVG {
   width: 200px;
   fill: #000;
   stroke: #000;
+}
+
+div.contact:hover p {
+  color: #9def27;
+}
+
+div.contact:hover svg.contactSVG {
+  fill: #9def27;
+  stroke: #9def27;
+  color: #9def27;
 }
 
 div.contact p {
@@ -264,17 +271,12 @@ section.clock {
   width: 100vw;
   height: 10vh;
   padding: 0px 30px 0px 30px;
-
   align-items: center;
   justify-content: space-between;
-
   font-family: 'Arial Narrow';
   font-weight: 500;
-  /* font-size: 30px; */
   font-size: calc(20px + (24 - 20) * ((100vw - 300px) / (1600 - 300)));
-
   letter-spacing: 2px;
-
   border-bottom: 1px solid black;
 }
 
@@ -326,14 +328,8 @@ section.clock {
   section.description {
     width: 100%;
     height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     flex-direction: column;
-
     padding: 0px 0px 0 0px;
-
-    border-bottom: 1px solid black;
   }
 
   div.description-bio {
@@ -366,7 +362,6 @@ section.tasks {
   height: auto;
   padding: 0px 0px 0 0px;
   flex-direction: column;
-  border-bottom: 1px solid black;
 }
 
 div.task-buttons {
@@ -397,23 +392,12 @@ div.location h3 {
 /* Clock =========================  */
 
 section.clock {
-  display: flex;
   flex-direction: column;
   width: 100vw;
   height: auto;
   padding: 0px 0px 0px 0px;
-
-  align-items: center;
   justify-content: center;
-
-  font-family: 'Roboto';
-  font-weight: 500;
-  /* font-size: 30px; */
   font-size: calc(20px + (30 - 20) * ((100vw - 300px) / (1600 - 300)));
-
-  letter-spacing: 2px;
-
-  border-bottom: 1px solid black;
 }
 
 section.clock span {
