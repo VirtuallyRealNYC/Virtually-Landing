@@ -1,6 +1,3 @@
-const contactTag = document.querySelector("div.contact")
-const contactSVG = document.querySelector(".contactSVG")
-const contactP = document.querySelector("div.contact p")
 var parent = document.getElementById('parent');
 var child = document.getElementById('child');
 child.style.paddingRight = child.offsetWidth - child.clientWidth + "px";
@@ -21,19 +18,6 @@ else {
 
       cursor.style.left = x + "px"
       cursor.style.top = y + "px"
-    })
-
-
-    contactTag.addEventListener("mouseover", function () {
-      contactSVG.style.fill = "#9def27"
-      contactSVG.style.stroke = "#9def27"
-      contactP.style.color = "#9def27"
-    })
-
-    contactTag.addEventListener("mouseout", function () {
-      contactSVG.style.fill = "#000"
-      contactSVG.style.stroke = "#000"
-      contactP.style.color = "#000"
     })
 }
 
