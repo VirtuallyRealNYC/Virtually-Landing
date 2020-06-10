@@ -1,110 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Virtually Real</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="normalize.css">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TimelineMax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtually Real</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TimelineMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  </head>
 
-<body id="parent">
-	<iframe src="https://sanctuarycomputer.github.io/blm-resource-embed/iframe.html" style="height:100%;width:100%;position:fixed;border:0;margin:0;padding:0;top:0;left:0;right:0;bottom:0;z-index:9999;"></iframe>
-<main id="child">
-  <!-- <div class="cursor"></div> -->
+  <body id="parent">
+    <iframe
+      title="BLM Bail Resources"
+      src="https://sanctuarycomputer.github.io/blm-resource-embed/iframe.html"
+      style="
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9999;
+      "
+    ></iframe>
+    <main id="child">
+      <!-- <div class="cursor"></div> -->
 
-  <section class="8-ball" id="8-ball"></section>
+      <section class="8-ball" id="8-ball"></section>
 
-  <section class="title">
-    <div class="title-heading">
-      <h1>Virtually Real</h1>
-    </div>
+      <section class="title">
+        <div class="title-heading">
+          <h1>Virtually Real</h1>
+        </div>
 
-    <span></span>
+        <span></span>
 
-    <div class="contact">
-      <a href="mailto:info@virtuallyreal.nyc">
-      <!-- <?xml version="1.0" encoding="utf-8"?> -->
-<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!-- <svg class="contactSVG" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="235.55px" height="109.05px" viewBox="0 0 235.55 109.05" style="enable-background:new 0 0 235.55 109.05;"
-	 xml:space="preserve">
-<path style="stroke-miterlimit:10;" d="M117.5,3.5c-10,0-19.7,0.57-28.94,1.64l15.51,3.55
-	c3.27-0.28,6.59-0.5,9.95-0.65c58.04-2.57,106,15.81,107.11,41.05c1.12,25.23-45.03,47.77-103.08,50.34
-	C60.02,102,12.06,83.62,10.95,58.39c-0.51-11.58,8.93-22.59,24.91-31.36l-10.92-2.5C11.45,32.82,3.5,43,3.5,54
-	c0,27.89,51.04,50.5,114,50.5s114-22.61,114-50.5S180.46,3.5,117.5,3.5z"/>
-</svg> -->
+        <div class="contact">
+          <a href="mailto:info@virtuallyreal.nyc">
+            <?xml version="1.0" encoding="utf-8"?>
+            <svg
+              class="contactSVG"
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              width="235.55px"
+              height="109.05px"
+              viewBox="0 0 235.55 109.05"
+              style="enable-background: new 0 0 235.55 109.05;"
+              xml:space="preserve"
+            >
+              <ellipse
+                style="fill: none;"
+                cx="117.5"
+                cy="54"
+                rx="116"
+                ry="52.5"
+              />
+            </svg>
+            <p>Contact</p>
+          </a>
+        </div>
+      </section>
 
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg class="contactSVG" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="235.55px" height="109.05px" viewBox="0 0 235.55 109.05" style="enable-background:new 0 0 235.55 109.05;"
-	 xml:space="preserve">
-<ellipse style="fill:none;" cx="117.5" cy="54" rx="116" ry="52.5"/>
-</svg>
+      <section class="description">
+        <div class="description-bio">
+          <h2>
+            We are a multi-disciplinary agency creating unique interactive
+            experiences.
+          </h2>
+        </div>
 
+        <span></span>
 
-      <p>Contact</p>
-      </a>
-    </div>
-  </section>
+        <div class="copyright">
+          <img src="lib/2019_Copyright.png" alt="" />
+        </div>
+      </section>
 
-  <section class="description">
-    <div class="description-bio">
-      <h2>
-        We are a multi-disciplinary agency creating unique interactive experiences.
-      </h2>
-    </div>
+      <section class="tasks">
+        <div class="task-buttons">
+          <h5>What we do</h5>
+          <h4>
+            Art Direction / Branding / Concepting / Design / Development /
+            Experiential / Strategy / Web-Design / 3D /
+          </h4>
+        </div>
 
-      <span></span>
+        <span></span>
 
-      <div class="copyright">
-        <img src="lib/2019_Copyright.png" alt="">
-      </div>
+        <div class="location">
+          <h5>Located At</h5>
+          <h4>99 Montrose Ave.<br />Brooklyn, New York<br />11249</h4>
+        </div>
+      </section>
 
-  </section>
+      <section class="clock">
+        <div id="MyClockDisplay" class="time" onload="showTime()"></div>
 
-  <section class="tasks">
-    <div class="task-buttons">
-        <h5>What we do</h5>
-        <h4>Art Direction / Branding / Concepting / Design / Development / Experiential / Strategy /  Web-Design / 3D /  </h4>
-    </div>
+        <span></span>
 
-    <span></span>
+        <div class="date" id="date"></div>
 
-    <div class="location">
-      <h5>Located At</h5>
-      <h4>99 Montrose Ave.<br>Brooklyn, New York<br>11249</h4>
-    </div>
-  </section>
+        <span></span>
 
-  <section class="clock">
-    <div id="MyClockDisplay" class="time" onload="showTime()">
-    </div>
+        <div class="virtually">
+          <h6>Virtually Fun</h6>
+        </div>
+      </section>
+    </main>
+  </body>
 
-    <span></span>
-
-    <div class="date" id="date">
-    </div>
-
-    <span></span>
-
-    <div class="virtually">
-      <h6>Virtually Fun</h6>
-    </div>
-  </section>
-
-</main>
-
-</body>
-
-<script src="https://unpkg.com/in-view@0.6.1/dist/in-view.min.js"></script>
-<script src="main.js"></script>
-<script src="three.min.js"></script>
-<script src="objloader.js"></script>
-<script src="mtlloader.js"></script>
-<script src="8-ball.js"></script>
+  <script src="https://unpkg.com/in-view@0.6.1/dist/in-view.min.js"></script>
+  <script src="main.js"></script>
+  <script src="three.min.js"></script>
+  <script src="objloader.js"></script>
+  <script src="mtlloader.js"></script>
+  <script src="8-ball.js"></script>
+</html>
