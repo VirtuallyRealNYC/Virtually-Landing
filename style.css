@@ -4,13 +4,6 @@
 }
 
 @font-face {
-  font-family: 'Druk';
-  src: url('fonts/DrukWide-Bold-Web.eot'); /* IE9 Compat Modes */
-  src: url('fonts/DrukWide-Bold-Web.woff2') format('woff2'), /* Super Modern Browsers */
-       url('fonts/DrukWide-Bold-Web.woff') format('woff');
-}
-
-@font-face {
   font-family: 'Chapter';
   src: url('fonts/Chapter-Regular.eot'); /* IE9 Compat Modes */
   src: url('fonts/Chapter-Regular.woff2') format('woff2'), /* Super Modern Browsers */
@@ -95,6 +88,10 @@ h6 {
   cursor: none !important;
 } */
 
+body {
+  overflow: hidden;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -133,9 +130,12 @@ section.title {
   padding: 0px 0px 0px 30px;
 }
 
-div.title-heading {
-
+section.title svg {
+  width: 100%;
+  max-width: calc(250px + 20vw);
 }
+
+div.title-heading {width: 100%;}
 
 section.title span {
   display: none;
@@ -297,7 +297,14 @@ section.clock {
     padding: 0px 0px 0px 0px;
   }
 
+  section.title {
+
+  }
+
   div.title-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 1.5em 15px 1.5em 15px;
   }
 
