@@ -2,26 +2,6 @@ var parent = document.getElementById('parent');
 var child = document.getElementById('child');
 child.style.paddingRight = child.offsetWidth - child.clientWidth + "px";
 
-
-
-var mq = window.matchMedia( "(max-width: 1024px)" );
-if (mq.matches) {
-    // window width is at less than 570px
-}
-else {
-    // window width is greater than 570px
-    document.addEventListener("mousemove", function(event) {
-      const x = event.pageX
-      const y = event.pageY + 20
-
-      const cursor = document.querySelector("div.cursor")
-
-      cursor.style.left = x + "px"
-      cursor.style.top = y + "px"
-    })
-}
-
-
 function showTime(){
     var date = new Date();
     var h = date.getHours(); // 0 - 23
